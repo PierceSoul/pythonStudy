@@ -7,7 +7,7 @@ import os,uuid
 from multiprocessing import Pool
 from multiprocessing import Process, freeze_support
 import multiprocessing
-localPath='d:\\baiduImg'
+localPath='/Users/Tong/Documents/testttt'
 #res = r'top'
 #str = "top iip"
 #print(re.findall(res,str))
@@ -37,7 +37,7 @@ def getImg(html):
 
 #根据文件名创建文件
 def createFileWithFileName(localPathParam,fileName):
-    totalPath=localPathParam+'\\'+fileName
+    totalPath=localPathParam+'/'+fileName
     if not os.path.exists(totalPath):
         file=open(totalPath,'a+')
         file.close()
