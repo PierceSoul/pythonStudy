@@ -51,6 +51,7 @@ for num in range(10,20):
     else:
         print(num,"是一个质数")
 
+
 ##嵌套循环
 
 i = 2
