@@ -53,7 +53,6 @@ for num in range(10,20):
 
 
 ##嵌套循环
-
 i = 2
 while( i < 50):
     j = 2
