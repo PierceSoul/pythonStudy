@@ -4,6 +4,7 @@ __author__ = 'Tony Liu'
 
 import pickle
 import os
+import json
 
 #pickling java中叫serializable
 
@@ -23,4 +24,25 @@ def picklingTest():
         d = pickle.load(f1)
     print(d)
     os.remove(filePath)
-picklingTest()
+#picklingTest()
+
+#dict json序列化
+dict = dict(name='Bob', age=20, score=88)
+jd = json.dumps(dict)
+print(jd)
+dictj = json.loads(jd)
+print(dictj)
+
+#class json序列化
+class Student(object):
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    def json2class(d):
+        return Student(d['name'],d['age'])
+
+s = Student("Bob",18)
+sj = json.dumps(s,default=lambda obj:obj.__dict__)
+print(sj)
+js = json.loads(sj,object_hook=Student.json2class)
+print(js.name)
