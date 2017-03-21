@@ -54,11 +54,9 @@ def readFile5():
 
 #写文件
 def writeFile1():
-    try:
-        with open('E:/1.txt', 'w',encoding='utf-8') as f:
-            f.write('Hello\n')
-            f.write('Python')
-        readFile5()
-    except FileNotFoundError as e:
-        print('FileNotFoundError : %s' % e)
+    with open('E:/1.txt', 'w',encoding='utf-8') as f:
+        f.write('Hello\n')
+        f.write('Python')
+    readFile5()
+
 writeFile1()
