@@ -64,4 +64,19 @@ def selectForeign():
         print(user.id,user.name,user.age,books)
     # 关闭Session:
     session.close()
-selectForeign()
+#selectForeign()
+
+#非外键方式
+def selectNotForeign():
+    session = DBSession()
+    us = session.query(User).outerjoin(Book,User.id == Book.user_id).all()
+    print(us)
+    for user in us:
+        books = []
+        for book in user.books:
+            b = {'bid':book.id,'name':book.name}
+            books.append(b)
+        print(user.id,user.name,user.age,books)
+    # 关闭Session:
+    session.close()
+selectNotForeign()
